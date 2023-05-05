@@ -1,0 +1,19 @@
+<div layout = "row" cdkDropListGroup>
+    <div class="example-container">
+        <h2 >Folders</h2>
+        <div class= "example-list"
+        cdkDropList
+        [cdkDropListData]="folders"
+        (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let folder of folders" cdkDrag>
+                <mat-card  style="width: max-content;margin:2em;padding-top:0;padding-left:0;padding-right:0">
+                    <mat-card-content>
+                        {{folder.folderName}}
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <router-outlet class= "example-container"></router-outlet>
+ 
+</div>
